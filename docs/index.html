@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>As dores da Jurimetria</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Julio Trecenti" />
+    <meta name="date" content="2018-05-23" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# As dores da Jurimetria
+## SEst 2018 - UFSCar
+### Julio Trecenti
+### 2018-05-23
+
+---
+
+
+
+
+---
+class: inverse
+
+# Avanços recentes
+
+--
+
+- Democratização da Inteligência Artificial
+
+--
+
+- Boom das startups / lawtechs
+
+--
+
+- Dados cada vez mais abertos
+    - Arrumados? Discutível...
+
+---
+class: inverse, center, middle
+
+# Problema
+
+--
+
+## Todo mundo quer ser dono disso!
+
+--
+
+Arrumação de dados fica dentro das empresas...
+
+--
+
+... Mas é difícil
+
+--
+
+Muitas empresas só conseguem vender dados
+
+--
+
+---
+class: inverse
+
+## Somente quem tem dinheiro consegue modelar
+
+--
+
+Por quê?
+
+--
+
+Porque precisa de gente pra classificar, limpar e organizar.
+
+---
+class: inverse, middle
+
+# Como resolver isso?
+
+--
+
+Ajude a ABJ nos nossos projetos open source 😄
+
+--
+
+Vamos democratizar os dados do judiciário!
+
+
+---
+class: inverse, middle, center
+
+# Quais são os desafios?
+
+--
+
+### Classificação
+
+### Taxonomia
+
+### Importação
+
+### Inferência
+
+---
+class: inverse, center, middle
+
+&lt;img src="izbicki.jpg" width="683" /&gt;
+
+
+---
+
+# Classificação
+
+--
+
+### Objetivos
+
+1. Classificar informações de peças processuais
+    - Sentenças: resultados, valor de indenização
+    - Petições: informações das partes, pedidos, valores
+2. Classificar tipos processuais a partir das peças
+    - Classe: rito processual
+    - Assunto: causas de pedir
+
+--
+
+### Desafio
+
+1. Não tem dados tageados
+2. Não confiamos na variável resposta
+
+--
+
+### Solução
+
+1. Projeto: [`craftr`](https://github.com/abjur/craftr): shiny app para classificar documentos
+2. Taxonomia!
+
+---
+
+# Taxonomia
+
+--
+
+### Objetivos
+
+1. Modelo não supervisionado para identificar tipos de processo
+    - A partir das peças processuais
+    - Precisa estar em linha com a lei
+
+--
+
+### Desafio
+
+1. Validação e atualização
+    - O modelo precisa ser validado de alguma forma
+    - Precisamos permitir inputs humanos
+    
+--
+
+### Solução
+
+1. Topic models + classificação
+    - Rodar topic models nas petições iniciais e ver o que dá
+    - Juntar com a lei com análise de especialistas
+    - Montar base de treino e transformar num problema de classificação
+
+---
+
+# Importação
+
+### Objetivo
+
+1. Mais scrapers
+2. Mais captchas
+3. Arrumar diários de justiça
+
+--
+
+### Desafio
+
+1. Precisamos de mais pessoas programando
+2. Precisamos de mais pessoas programando
+3. Precisamos de mais pessoas programando
+
+### Solução
+
+1. [`courtsbr`](https://github.com/courtsbr)
+2. [`decryptr`](https://github.com/decryptr)
+3. Criar um `tidyDJ`
+
+---
+
+# Inferência
+
+### Objetivo
+
+1. Fluxos processuais e gargalos
+    - Saber quanto tempo o processo demora
+    - Separar o tempo por fases e agentes (juiz, cartório, advogado, ...)
+    
+### Desafio
+
+1. Dados horrorosos
+    - lidar com censuras de todo tipo
+    - lidar com eventos em sequência
+
+### Solução
+
+1. Análise de sobrevivência com esteroides
+    - Verificar o que é e o que não é possível recuperar
+    - Criar um pacote `juriflux` para arrumar os tempos
+    - Desenvolver modelos apropriados
+    
+---
+class: inverse
+
+# Desafios viajados
+
+--
+
+## Semântica
+
+- Artigos usados nas argumentações
+- Grafos dos atores nos processos
+
+--
+
+## Peticionamento e constestação automáticos
+
+- Formulário -&gt; petição
+- Petição aliada com probabilidade de vitória
+
+--
+
+## Decisão automática
+
+- Construir fundamentação
+- Aplicar em juizados especiais
+
+---
+class: inverse, middle, center
+
+# Objetivo final: The [lexverse](https://github.com/lexverse) !!!
+
+---
+class: inverse
+
+# Me stalkeia
+
+
+### https://github.com/jtrecenti
+
+### https://github.com/abjur
+
+### https://github.com/courtsbr
+
+### https://github.com/decryptr
+
+### https://github.com/curso-r
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

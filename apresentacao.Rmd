@@ -1,0 +1,261 @@
+---
+title: "As dores da Jurimetria"
+subtitle: "SEst 2018 - UFSCar"
+author: "Julio Trecenti"
+date: "2018-05-23"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+---
+class: inverse
+
+# Avanços recentes
+
+--
+
+- Democratização da Inteligência Artificial
+
+--
+
+- Boom das startups / lawtechs
+
+--
+
+- Dados cada vez mais abertos
+    - Arrumados? Discutível...
+
+---
+class: inverse, center, middle
+
+# Problema
+
+--
+
+## Todo mundo quer ser dono disso!
+
+--
+
+Arrumação de dados fica dentro das empresas...
+
+--
+
+... Mas é difícil
+
+--
+
+Muitas empresas só conseguem vender dados
+
+--
+
+---
+class: inverse
+
+## Somente quem tem dinheiro consegue modelar
+
+--
+
+Por quê?
+
+--
+
+Porque precisa de gente pra classificar, limpar e organizar.
+
+---
+class: inverse, middle
+
+# Como resolver isso?
+
+--
+
+Ajude a ABJ nos nossos projetos open source `r emo::ji("smile")`
+
+--
+
+Vamos democratizar os dados do judiciário!
+
+
+---
+class: inverse, middle, center
+
+# Quais são os desafios?
+
+--
+
+### Classificação
+
+### Taxonomia
+
+### Importação
+
+### Inferência
+
+---
+class: inverse, center, middle
+
+```{r echo=FALSE}
+knitr::include_graphics("izbicki.jpg")
+```
+
+
+---
+
+# Classificação
+
+--
+
+### Objetivos
+
+1. Classificar informações de peças processuais
+    - Sentenças: resultados, valor de indenização
+    - Petições: informações das partes, pedidos, valores
+2. Classificar tipos processuais a partir das peças
+    - Classe: rito processual
+    - Assunto: causas de pedir
+
+--
+
+### Desafio
+
+1. Não tem dados tageados
+2. Não confiamos na variável resposta
+
+--
+
+### Solução
+
+1. Projeto: [`craftr`](https://github.com/abjur/craftr): shiny app para classificar documentos
+2. Taxonomia!
+
+---
+
+# Taxonomia
+
+--
+
+### Objetivos
+
+1. Modelo não supervisionado para identificar tipos de processo
+    - A partir das peças processuais
+    - Precisa estar em linha com a lei
+
+--
+
+### Desafio
+
+1. Validação e atualização
+    - O modelo precisa ser validado de alguma forma
+    - Precisamos permitir inputs humanos
+    
+--
+
+### Solução
+
+1. Topic models + classificação
+    - Rodar topic models nas petições iniciais e ver o que dá
+    - Juntar com a lei com análise de especialistas
+    - Montar base de treino e transformar num problema de classificação
+
+---
+
+# Importação
+
+### Objetivo
+
+1. Mais scrapers
+2. Mais captchas
+3. Arrumar diários de justiça
+
+--
+
+### Desafio
+
+1. Precisamos de mais pessoas programando
+2. Precisamos de mais pessoas programando
+3. Precisamos de mais pessoas programando
+
+### Solução
+
+1. [`courtsbr`](https://github.com/courtsbr)
+2. [`decryptr`](https://github.com/decryptr)
+3. Criar um `tidyDJ`
+
+---
+
+# Inferência
+
+### Objetivo
+
+1. Fluxos processuais e gargalos
+    - Saber quanto tempo o processo demora
+    - Separar o tempo por fases e agentes (juiz, cartório, advogado, ...)
+    
+### Desafio
+
+1. Dados horrorosos
+    - lidar com censuras de todo tipo
+    - lidar com eventos em sequência
+
+### Solução
+
+1. Análise de sobrevivência com esteroides
+    - Verificar o que é e o que não é possível recuperar
+    - Criar um pacote `juriflux` para arrumar os tempos
+    - Desenvolver modelos apropriados
+    
+---
+class: inverse
+
+# Desafios viajados
+
+--
+
+## Semântica
+
+- Artigos usados nas argumentações
+- Grafos dos atores nos processos
+
+--
+
+## Peticionamento e constestação automáticos
+
+- Formulário -> petição
+- Petição aliada com probabilidade de vitória
+
+--
+
+## Decisão automática
+
+- Construir fundamentação
+- Aplicar em juizados especiais
+
+---
+class: inverse, middle, center
+
+# Objetivo final: The [lexverse](https://github.com/lexverse) !!!
+
+---
+class: inverse
+
+# Me stalkeia
+
+
+### https://github.com/jtrecenti
+
+### https://github.com/abjur
+
+### https://github.com/courtsbr
+
+### https://github.com/decryptr
+
+### https://github.com/curso-r
+
