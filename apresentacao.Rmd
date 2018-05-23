@@ -19,6 +19,45 @@ options(htmltools.dir.version = FALSE)
 ---
 class: inverse
 
+# O que é jurimetria
+
+- Estatística aplicada ao direito
+- Utilizamos dados do judiciário para estudar o que acontece no direito e como poderíamos melhorá-lo
+
+---
+class: inverse
+
+# Para que serve jurimetria
+
+1. auxiliar na formulação de políticas públicas,
+1. melhorar a administração dos tribunais,
+1. calcular o risco de carteiras de processos e
+1. otimizar estratégias processuais.
+
+---
+
+# Nas empresas
+
+```{r, echo=FALSE}
+knitr::include_graphics("jurimetria_empresas.png")
+```
+
+---
+class: inverse, middle, center
+
+# Principal problema da jurimetria
+
+--
+
+### Dados horríveis e volumosos
+
+--
+
+### Pré-sal sociológico
+
+---
+class: inverse
+
 # Avanços recentes
 
 --
